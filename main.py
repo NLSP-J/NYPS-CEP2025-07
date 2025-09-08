@@ -2,6 +2,7 @@ import pygame as pg
 import random, time
 pg.init()
 clock = pg.time.Clock()
+import asyncio
 
 black = (0, 0, 0)
 
@@ -143,7 +144,7 @@ def apple_collision_check(apple_data, player_pos):
             score += 1
             break
             
-def main():
+async def main():
 
     global running, player_pos
 
@@ -185,4 +186,7 @@ def main():
         clock.tick(25)
         pg.display.flip()
 
-main()
+
+        await asyncio.sleep(0)
+
+asyncio.run(main())
